@@ -29,7 +29,7 @@ public class UIScore : MonoBehaviour
             _newScoreAnimation.Play(true);
         }
 
-        _highScoreUI.SetText(highScore.ToString());
+        _highScoreUI.SetText(_score.ToString());
         PlayerPrefs.SetInt(_highScore, highScore);
     }
 }

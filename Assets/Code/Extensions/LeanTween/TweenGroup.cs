@@ -24,7 +24,7 @@ namespace UnityEngine.Animations
         {
             WaitForSeconds delay = new(_delay);
             foreach (var tween in tweens) { tween.Play(value); if (_delay != 0) yield return delay; }
-            _onValueChanged.Invoke(_negateCallback ? !value : value);
+            if (_onValueChanged.GetPersistentEventCount() != 0) _onValueChanged.Invoke(_negateCallback ? !value : value);
         }
     }
 }

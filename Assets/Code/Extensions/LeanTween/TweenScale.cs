@@ -15,6 +15,8 @@ namespace UnityEngine.Animations
         {
             CancelTween();
 
+            if (!value) return;
+
             //create tween animation
             LTDescr tween = LeanTween.scale(_self, _to, _tweenCore.Time).setEase(_animationCurve);
             if (_tweenCore.IgnoreTimeScale) tween.setIgnoreTimeScale(true);

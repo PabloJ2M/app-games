@@ -3,6 +3,7 @@ using UnityEngine;
 [ExecuteAlways, SelectionBase, RequireComponent(typeof(Collider2D))]
 public class GizmosAreaDrawer2D : MonoBehaviour
 {
+#if UNITY_EDITOR
     [SerializeField] private Collider2D _shape;
     [SerializeField] private Color _color = Color.green;
     [SerializeField, Range(0f, 1f)] private float _alpha = 0.15f;
@@ -22,4 +23,5 @@ public class GizmosAreaDrawer2D : MonoBehaviour
         if (_shape is CircleCollider2D circle)
             Gizmos.DrawSphere(position, circle.radius);
     }
+#endif
 }

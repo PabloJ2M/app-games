@@ -12,6 +12,7 @@ public class Impulse : Jump
     protected override void Awake()
     {
         base.Awake();
+        _targetPoint = _transform.PositionY();
         _gravity = _rigidbody.gravityScale * Mathf.Abs(Physics2D.gravity.y);
     }
     protected virtual void Update()
@@ -34,6 +35,18 @@ public class Impulse : Jump
         if (_impulse.y > 0) _displacePool.Invoke(displacement * 2);
         else _rigidbody.position = new(_rigidbody.position.x, _targetPoint - 0.01f);
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) _targetPoint = transform.PositionY();
+        Vector2 target = new(0, _targetPoint);
+        Vector2 length = Vector2.right * 2;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(target - length, target + length);
+    }
+#endif
 
     public void JumpDirection(int direction)
     {
