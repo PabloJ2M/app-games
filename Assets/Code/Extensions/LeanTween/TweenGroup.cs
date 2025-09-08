@@ -12,7 +12,10 @@ namespace UnityEngine.Animations
         [SerializeField] private UnityEvent<bool> _onValueChanged;
 
         private List<ITween> tweens = new();
+        private WaitForSeconds _delayTime;
+        private bool _isActive = true;
 
+        private void Awake() => _delayTime = new(_delay);
         public void AddListener(ITween tween) => tweens.Add(tween);
         public void RemoveListener(ITween tween) => tweens.Remove(tween);
 
@@ -22,8 +25,8 @@ namespace UnityEngine.Animations
 
         private IEnumerator TweenDelay(bool value)
         {
-            WaitForSeconds delay = new(_delay);
-            foreach (var tween in tweens) { tween.Play(value); if (_delay != 0) yield return delay; }
+            if (_isActive == value) yield break;
+            foreach (var tween in tweens) { tween.Play(value); if (_delay != 0) yield return _delayTime; }
             if (_onValueChanged.GetPersistentEventCount() != 0) _onValueChanged.Invoke(_negateCallback ? !value : value);
         }
     }

@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnityEngine.Animations.TweenGroup
   _delay: 0
-  _negateCallback: 0
+  _negateCallback: 1
   _onValueChanged:
     m_PersistentCalls:
       m_Calls: []

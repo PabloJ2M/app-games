@@ -7,22 +7,33 @@ namespace UnityEngine.Animations
 
         private CanvasGroup _canvasGroup;
 
-        protected override void Awake() { base.Awake(); _canvasGroup = GetComponent<CanvasGroup>(); }
+        protected override void Awake()
+        {
+            base.Awake();
+            _canvasGroup = GetComponent<CanvasGroup>();
+        }
         private void Start()
         {
             _alpha = _canvasGroup.alpha = _tweenCore.IsEnabled ? 1f : 0f;
-
-            if (!_tweenCore.IsEnabled && _modifyInteraction)
-                _canvasGroup.interactable = _canvasGroup.blocksRaycasts = false;
+            PerformceInteraction(_tweenCore.IsEnabled);
+        }
+        private void PerformceInteraction(bool value)
+        {
+            if (_modifyInteraction)
+                _canvasGroup.interactable = _canvasGroup.blocksRaycasts = value;
         }
         
         protected override void OnUpdate(float value) { base.OnUpdate(value); _canvasGroup.alpha = value; }
+        protected override void OnPerformePlay(bool value)
+        {
+            base.OnPerformePlay(value);
+            if (_tweenCore.IsEnabled != value)
+                PerformceInteraction(value);
+        }
         protected override void OnComplete()
         {
             base.OnComplete();
-            
             _canvasGroup.alpha = _alpha;
-            if (_modifyInteraction) _canvasGroup.interactable = _canvasGroup.blocksRaycasts = _tweenCore.IsEnabled;
         }
     }
 }
