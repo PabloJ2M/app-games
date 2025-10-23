@@ -7,7 +7,7 @@ namespace Unity.Pool
     {
         private Rigidbody2D _rigidbody;
 
-        private void Awake() => _rigidbody = GetComponent<Rigidbody2D>();
+        protected override void Awake() { base.Awake(); _rigidbody = GetComponent<Rigidbody2D>(); }
         public void DropDirection(Vector2 direction)
         {
             _rigidbody.linearVelocity = direction;
@@ -21,7 +21,7 @@ namespace Unity.Pool
         public override void Enable()
         {
             _rigidbody.bodyType = RigidbodyType2D.Dynamic;
-            SetAlpha(1.0f);
+            SetAlpha(1f);
             base.Enable();
         }
         public override void Disable()

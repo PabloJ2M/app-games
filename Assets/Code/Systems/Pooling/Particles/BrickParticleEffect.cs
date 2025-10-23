@@ -12,7 +12,7 @@ namespace Unity.Pool
             base.Awake();
             _player = GameObject.FindWithTag("Player").transform;
         }
-        protected override void OnReleaseObjectEffect(PoolObject @object)
+        protected override void OnReleaseObjectEffect(PoolObjectBehaviour @object)
         {
             var brick = @object as Brick;
             var particle = Pool.Get() as BrickParticle;

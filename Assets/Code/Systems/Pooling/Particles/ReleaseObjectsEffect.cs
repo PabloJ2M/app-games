@@ -5,6 +5,6 @@ namespace Unity.Pool
         private void OnEnable() => _spawner.OnDespawnObject += OnReleaseObjectEffect;
         private void OnDisable() => _spawner.OnDespawnObject -= OnReleaseObjectEffect;
 
-        protected abstract void OnReleaseObjectEffect(PoolObject @object);
+        protected abstract void OnReleaseObjectEffect(PoolObjectBehaviour @object);
     }
 }

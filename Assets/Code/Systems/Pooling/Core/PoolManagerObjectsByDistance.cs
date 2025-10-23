@@ -6,12 +6,13 @@ namespace Unity.Pool
     {
         [Header("Distance")]
         [SerializeField] private float _spaceDistance;
+
+        private GameManager _gameManager;
         private float _traveled;
 
-        public float Speed { private get; set; }
-
+        protected override void Awake() { base.Awake(); _gameManager = GameManager.Instance; }
         protected virtual void Start() => OnSpawn();
-        protected virtual void Update() => ForceDistance(Speed * Time.deltaTime);
+        protected virtual void Update() => ForceDistance(_gameManager.Speed * Time.deltaTime);
         public void ForceDistance(float amount) => Math.Loop(ref _traveled, amount, _spaceDistance, OnSpawn);
 
         protected abstract void OnSpawn();

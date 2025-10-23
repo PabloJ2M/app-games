@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace Unity.Pool
 {
-    public sealed class Brick : PoolObject
+    public sealed class Brick : PoolObjectOnSpline
     {
         [Serializable] private struct BlockComponent
         {

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Unity.Pool
 {
     [RequireComponent(typeof(IPoolManagerObjects))]
-    public abstract class PoolManagerParticles : PoolBehaviuour
+    public abstract class PoolManagerParticles : PoolBehaviuour<PoolParticle>
     {
         protected IPoolManagerObjects _spawner;
 

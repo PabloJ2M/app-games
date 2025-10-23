@@ -19,7 +19,7 @@ namespace Unity.Pool
         }
         protected abstract IEnumerator Start();
 
-        protected override void OnGet(PoolObject @object)
+        protected override void OnGet(PoolObjectBehaviour @object)
         {
             @object.Index = _index;
             base.OnGet(@object);

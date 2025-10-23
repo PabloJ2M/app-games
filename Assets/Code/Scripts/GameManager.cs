@@ -30,7 +30,6 @@ public class GameManager : SingletonBasic<GameManager>
         _currentSpeed = Mathf.Clamp01(_currentSpeed + Time.deltaTime * _speed);
         Speed = Mathf.Lerp(_clampSpeed.x, _clampSpeed.y, _acceleration.Evaluate(_currentSpeed));
     }
-    //private void FixedUpdate() => _onSpeedUpdated.Invoke(Speed);
     
     public void Enable() => IsEnabled = true;
     public void Disable() { Speed = 0f; IsEnabled = false; _onCompleteGame.Invoke(); }

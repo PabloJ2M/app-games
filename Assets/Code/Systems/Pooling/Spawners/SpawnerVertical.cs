@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Unity.Pool
 {
-    public class SpawnerVertical : PoolManagerObjectsByDistance
+    public class SpawnerVertical : SpawnerPoint
     {
         [SerializeField] private float _spawnHeight;
 

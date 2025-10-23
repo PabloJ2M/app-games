@@ -4,39 +4,35 @@ using UnityEngine.Pool;
 
 namespace Unity.Pool
 {
-    public abstract class PoolBehaviuour : MonoBehaviour
+    public abstract class PoolBehaviuour<T> : MonoBehaviour where T : PoolObjectBehaviour
     {
         [SerializeField] protected Transform _parent;
-        [SerializeField] protected PoolObject _prefab;
+        [SerializeField] protected T _prefab;
 
-        public IList<PoolObject> Spawned { get; set; }
+        public IList<T> Spawned { get; set; } = new List<T>();
 
-        protected IObjectPool<PoolObject> Pool;
+        protected IObjectPool<PoolObjectBehaviour> Pool;
         protected int LastIndex => Spawned.Count - 1;
 
-        protected virtual void Awake()
-        {
-            Spawned = new List<PoolObject>();
-            Pool = new ObjectPool<PoolObject>(OnCreate, OnGet, OnRelease, OnDestroyObject);
-        }
+        protected virtual void Awake() => Pool = new ObjectPool<PoolObjectBehaviour>(OnCreate, OnGet, OnRelease, OnDestroyObject);
         protected virtual void Reset() => _parent = transform;
 
-        protected virtual PoolObject OnCreate()
+        protected virtual T OnCreate()
         {
             var obj = Instantiate(_prefab, _parent);
             obj.PoolReference = Pool;
             return obj;
         }
-        protected virtual void OnGet(PoolObject @object)
+        protected virtual void OnGet(PoolObjectBehaviour @object)
         {
             @object.Enable();
-            Spawned?.Add(@object);
+            Spawned?.Add(@object as T);
         }
-        protected virtual void OnRelease(PoolObject @object)
+        protected virtual void OnRelease(PoolObjectBehaviour @object)
         {
             @object.Disable();
-            Spawned?.Remove(@object);
+            Spawned?.Remove(@object as T);
         }
-        protected virtual void OnDestroyObject(PoolObject @object) => Destroy(@object.gameObject);
+        protected virtual void OnDestroyObject(PoolObjectBehaviour @object) => Destroy(@object.gameObject);
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Impulse : Jump
+public class JumpAir : Jump
 {
     [SerializeField] protected UnityEvent<float> _displacePool;
 

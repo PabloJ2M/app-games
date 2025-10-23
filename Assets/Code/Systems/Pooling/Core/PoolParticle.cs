@@ -4,24 +4,21 @@ using UnityEngine;
 namespace Unity.Pool
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public abstract class PoolParticle : PoolObject
+    public abstract class PoolParticle : PoolObjectBehaviour
     {
-        [SerializeField] private SpriteRenderer _render;
+        [SerializeField] private SpriteRendererAlpha _render;
         [SerializeField, Range(0.1f, 10f)] private float _fadeSpeed = 1f;
+        private SpriteRendererAlpha[] _children;
 
-        protected override void Reset()
-        {
-            base.Reset();
-            _render = GetComponent<SpriteRenderer>();
-        }
+        protected virtual void Awake() => _children = GetComponentsInChildren<SpriteRendererAlpha>();
+        protected override void Reset() { base.Reset(); _render = GetComponent<SpriteRendererAlpha>(); }
 
-        public void SetImage(Sprite sprite) => _render.sprite = sprite;
+        public void SetImage(Sprite sprite) => _render.SetSprite(sprite);
         public void SetPosition(Vector2 position) => Transform.position = position;
         public void SetAlpha(float alpha)
         {
-            Color color = _render.color;
-            color.a = alpha;
-            _render.color = color;
+            foreach (var render in _children)
+                render.SetAlpha(alpha);
         }
 
         protected IEnumerator FadeOut()

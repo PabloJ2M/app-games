@@ -3,11 +3,11 @@ using UnityEngine.Pool;
 
 namespace Unity.Pool
 {
-    public abstract class PoolObject : MonoBehaviour
+    public abstract class PoolObjectBehaviour : MonoBehaviour
     {
         [field: SerializeField] public Transform Transform { get; private set; }
 
-        public IObjectPool<PoolObject> PoolReference { protected get; set; }
+        public IObjectPool<PoolObjectBehaviour> PoolReference { protected get; set; }
         public ulong Index { protected get; set; }
 
         protected virtual void Reset() => Transform = transform;
