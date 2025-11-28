@@ -31,9 +31,9 @@ public class DeathCondition : MonoBehaviour
         if (_isDeath) return;
         foreach (var component in _components) component.enabled = false;
 
-        Invoke(nameof(NormalColor), 0.15f);
+        Invoke(nameof(NormalColor), 0.2f);
         GameManager.Instance.Disable();
-        Time.timeScale = 0.2f;
+        Time.timeScale = 0.4f;
         
         _render.color = Color.black;
         _cameraEffect?.Shake();

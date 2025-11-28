@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnityEngine.Animations.TweenCore
   _group: {fileID: 0}
   _settings:
-    duration: 1
+    duration: 0.3
     ease: 0
     customEase:
       serializedVersion: 2
