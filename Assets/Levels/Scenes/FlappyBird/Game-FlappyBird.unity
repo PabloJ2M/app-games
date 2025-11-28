@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb89b5cf1255314093fc740572fb15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedMultiply: 5
+  _speedMultiply: 20
   _direction: {x: 1, y: 0}
 --- !u!1 &1023362533
 GameObject:
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb89b5cf1255314093fc740572fb15b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
-  _speedMultiply: 5
+  _speedMultiply: 10
   _direction: {x: 1, y: 0}
 --- !u!212 &1023362535
 SpriteRenderer:
