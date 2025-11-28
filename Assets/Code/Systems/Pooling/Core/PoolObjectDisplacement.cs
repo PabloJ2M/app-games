@@ -15,7 +15,9 @@ namespace Unity.Pool
         }
 
         private void Update() => Translate(_gameManager.Speed);
+
         public void Translate(float speed) => Move(speed, Time.deltaTime);
+        public void TranslateUnit() => Move(1f);
 
         public void Move(float speed, float delta = 1f)
         {

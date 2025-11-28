@@ -1043,10 +1043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837c616d0fc7a0243a7e56a052647e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _direction: {x: 0, y: -1}
-  _onDisplaceAmount:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &1367880119
 Transform:
   m_ObjectHideFlags: 0
@@ -1079,15 +1075,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parent: {fileID: 2111114977}
   _prefab: {fileID: 2726567476205998455, guid: 702ed45959908ea4fb65f51523678a1f, type: 3}
-  _spline: {fileID: 704633644}
   _capacity: 10
   _enqueueDelay: 1
   _onEnqueue:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1367880117}
-        m_TargetAssemblyTypeName: Unity.Pool.PoolObjectMovement, Assembly-CSharp
-        m_MethodName: MoveUnit
+        m_TargetAssemblyTypeName: Unity.Pool.PoolObjectDisplacement, Assembly-CSharp
+        m_MethodName: TranslateUnit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1155,6 +1150,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488562300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3121469551645764624, guid: bd229db9f8590884c9cbe84284a9bb14, type: 3}
+  m_PrefabInstance: {fileID: 354045367128036870}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2225d3a2085b1b4a8a7cb06b0fef314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1498614882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraEffect: {fileID: 1801601100}
+  _hitEffect: {fileID: 1488562300}
+  _render: {fileID: 1555809345}
   _components:
   - {fileID: 1555809347}
 --- !u!58 &1555809343
