@@ -1,4 +1,6 @@
+using System.Linq;
 using System.Collections;
+using UnityEngine;
 
 namespace Unity.Pool
 {
@@ -8,11 +10,13 @@ namespace Unity.Pool
         {
             yield return _emptySpaceAvailable;
 
-            var obstacle = Pool.Get();
-            float target = LastIndex <= 0 ? transform.PositionY() : (Spawned[LastIndex - 1].Transform.PositionY() + 1);
-
-            obstacle.Transform.PositionY(target);
+            var obstacle = Pool.Get() as PoolObjectOnSpline;
+            
+            float target = LastIndex <= 0 ? transform.PositionY() : (Spawned[LastIndex - 1].Transform.LocalPositionY() + 1);
+            obstacle.SetDistance(target);
             _index++;
+            
+            //Debug.Log(Spawned[LastIndex].Transform.LocalPositionY(), Spawned[LastIndex]);
 
             StartCoroutine(Start());
         }

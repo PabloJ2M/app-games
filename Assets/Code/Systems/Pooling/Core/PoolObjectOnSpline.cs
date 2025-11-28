@@ -32,6 +32,12 @@ namespace Unity.Pool
             _distanceTraveled = value * _splineLength;
             UpdatePosition();
         }
+        public void SetDistance(float value)
+        {
+            _distanceTraveled = value;
+            UpdatePosition();
+        }
+
         public void AddDistance(float amount)
         {
             _distanceTraveled += amount;
