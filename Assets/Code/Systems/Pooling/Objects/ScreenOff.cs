@@ -1,7 +1,14 @@
 namespace Unity.Pool
 {
-    public sealed class ScreenOff : PoolObjectOnSpline
+    public class ScreenOff : PoolObjectOnSpline
     {
-        private void OnBecameInvisible() => PoolReference.Release(this);
+        private bool _isVisible;
+
+        private void OnBecameVisible() => _isVisible = true;
+        private void OnBecameInvisible()
+        {
+            if (_isVisible)
+                PoolReference.Release(this);
+        }
     }
 }

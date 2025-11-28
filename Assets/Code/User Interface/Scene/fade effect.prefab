@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6070593763007782991}
   - component: {fileID: 8496455396600272758}
   - component: {fileID: 4766068253510831318}
-  - component: {fileID: 4171372954407713450}
   - component: {fileID: 5083837270423083732}
   m_Layer: 5
   m_Name: fade effect
@@ -90,25 +89,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &4171372954407713450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5286465641906978012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1bea9ea0271b94f902a4c2474daf05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnityEngine.Animations.TweenCore
-  _group: {fileID: 0}
-  _time: 0.2
-  _delay: 0
-  _startDisable: 0
-  _playOnAwake: 0
-  _isLoop: 0
-  _ignoreTimeScale: 0
 --- !u!114 &5083837270423083732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,27 +101,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41f67cb5d3cee340a0f1855189ad783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnityEngine.SceneManagement.FadeScene
-  _animationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  _speed: 3

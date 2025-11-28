@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Transform>k__BackingField: {fileID: 6854157241640153666}
+  _snap: 3
   _curve:
     serializedVersion: 2
     m_Curve:

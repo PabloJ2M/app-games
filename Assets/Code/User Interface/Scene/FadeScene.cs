@@ -1,28 +1,30 @@
 using System;
-using UnityEngine.Animations;
 
 namespace UnityEngine.SceneManagement
 {
     [RequireComponent(typeof(CanvasGroup))]
-    public class FadeScene : TweenAlpha
+    public class FadeScene : MonoBehaviour
     {
+        [SerializeField] private float _speed;
         private CanvasGroup _canvasGroup;
-        public Action<bool> onComplete;
+        private bool _isChangingScene, _completedTask;
 
-        protected override void Awake() { base.Awake(); _canvasGroup = GetComponent<CanvasGroup>(); }
+        public Action onComplete;
+
+        private void Awake() => _canvasGroup = GetComponent<CanvasGroup>();
 
         private void Start()
         {
-            _tweenCore.IsEnabled = onComplete == null;
-            _canvasGroup.alpha = _alpha = GetCurve(_tweenCore.IsEnabled ? 1f : 0f);
-            if (_tweenCore.IsEnabled) FadeOut(); else FadeIn();
+            _isChangingScene = onComplete != null;
+            _canvasGroup.alpha = _isChangingScene ? 0f : 1f;
         }
-        protected override void OnUpdate(float value) { base.OnUpdate(value); _canvasGroup.alpha = value; }
-        protected override void OnComplete()
+        private void Update()
         {
-            base.OnComplete();
-            onComplete?.Invoke(true);
-            if (!_tweenCore.IsEnabled) Destroy(gameObject);
+            float delta = Time.deltaTime * (_isChangingScene ? 1 : -1) * _speed;
+            _canvasGroup.alpha += delta;
+
+            if (_canvasGroup.alpha == 1f && !_completedTask) { onComplete?.Invoke(); _completedTask = true; }
+            if (_canvasGroup.alpha == 0f) Destroy(gameObject);
         }
     }
 }

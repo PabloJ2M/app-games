@@ -32,5 +32,10 @@ public class GameManager : SingletonBasic<GameManager>
     }
     
     public void Enable() => IsEnabled = true;
-    public void Disable() { Speed = 0f; IsEnabled = false; _onCompleteGame.Invoke(); }
+    public void Disable()
+    {
+        Speed = 0f;
+        IsEnabled = false;
+        _onCompleteGame.Invoke();
+    }
 }

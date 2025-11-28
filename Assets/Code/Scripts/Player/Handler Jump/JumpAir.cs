@@ -8,6 +8,7 @@ public class JumpAir : Jump
     protected float _targetPoint = -1f;
     protected Vector2 _impulse;
     protected float _gravity;
+    private bool _hasReachLimit;
 
     protected override void Awake()
     {
@@ -24,15 +25,19 @@ public class JumpAir : Jump
         _impulse.x = Mathf.MoveTowards(_impulse.x, 0f, 5f * delta);
 
         //normal gravity
-        if (_rigidbody.position.y <= _targetPoint - 0.01f) { _rigidbody.linearVelocity = _impulse; return; }
+        if (!_hasReachLimit && _rigidbody.position.y < _targetPoint - 0.01f)
+        {
+            _rigidbody.linearVelocity = _impulse;
+            return;
+        }
         
         //snap vertical gravity
-        float displacement = _impulse.y * delta;
-        _rigidbody.position = new(_rigidbody.position.x, _targetPoint + displacement);
+        _rigidbody.position = new(_rigidbody.position.x, _targetPoint);
         _rigidbody.linearVelocityX = _impulse.x;
         _rigidbody.linearVelocityY = 0f;
 
-        if (_impulse.y > 0) _displacePool.Invoke(displacement * 2);
+        _hasReachLimit = _impulse.y > 0;
+        if (_hasReachLimit) _displacePool.Invoke(_impulse.y);
         else _rigidbody.position = new(_rigidbody.position.x, _targetPoint - 0.01f);
     }
 
@@ -54,6 +59,6 @@ public class JumpAir : Jump
         InteractTrigger();
 
         _impulse = new Vector2(direction, 2) * _force;
-        _transform.localScale = new(direction, 1, 1);
+        //_transform.eulerAngles = new(0, direction > 0 ? 0 : -180, 0);
     }
 }

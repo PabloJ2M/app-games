@@ -10,9 +10,9 @@ namespace Unity.Pool
         protected override void UpdatePosition()
         {
             base.UpdatePosition();
-            Transform.localScale = _curve.Evaluate(CurrentTime) * Vector2.one;
+            Transform.localScale = _curve.Evaluate(_currentTime) * Vector2.one;
 
-            if (CurrentTime < 1f) return;
+            if (_currentTime < 1f) return;
             StartCoroutine(Release());
         }
         IEnumerator Release()

@@ -8,10 +8,11 @@ namespace UnityEngine.SceneManagement
         [SerializeField] private RectTransform _transform;
         [SerializeField] private FadeScene _fade;
 
-        public List<string> scenes { get; protected set; }
+        public List<string> scenes { get; protected set; } = new();
         private bool _lock;
 
-        protected override void Awake() { base.Awake(); scenes = new(); }
+        private void Start() => Instantiate(_fade, _transform);
+
         public void SwipeScene(string value) => OnFading(value);
         public void Quit() => OnFading(string.Empty);
 
@@ -39,7 +40,7 @@ namespace UnityEngine.SceneManagement
             Instantiate(_fade, _transform).onComplete += onComplete;
             _lock = true;
 
-            void onComplete(bool _)
+            void onComplete()
             {
                 Time.timeScale = 1;
                 if (string.IsNullOrEmpty(value)) Application.Quit();
