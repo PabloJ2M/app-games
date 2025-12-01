@@ -923,7 +923,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unity.Pool.SpawnerHorizontal
   _parent: {fileID: 925010321}
-  _prefab: {fileID: 4968424724696308662, guid: cc974954d4c6702458d9d92150677eed, type: 3}
+  _prefabs:
+  - {fileID: 4968424724696308662, guid: cc974954d4c6702458d9d92150677eed, type: 3}
   _capacity: 10
   _spaceDistance: 10
   _spawnWidth: 2

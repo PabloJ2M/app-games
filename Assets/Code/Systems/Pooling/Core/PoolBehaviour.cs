@@ -7,20 +7,24 @@ namespace Unity.Pool
     public abstract class PoolBehaviuour<T> : MonoBehaviour where T : PoolObjectBehaviour
     {
         [SerializeField] protected Transform _parent;
-        [SerializeField] protected T _prefab;
+        [SerializeField] protected T[] _prefabs;
+
+        protected Dictionary<T, ObjectPool<PoolObjectBehaviour>> Pools = new();
+        protected int LastIndex => Spawned.Count - 1;
 
         public IList<T> Spawned { get; set; } = new List<T>();
 
-        protected IObjectPool<PoolObjectBehaviour> Pool;
-        protected int LastIndex => Spawned.Count - 1;
-
-        protected virtual void Awake() => Pool = new ObjectPool<PoolObjectBehaviour>(OnCreate, OnGet, OnRelease, OnDestroyObject);
         protected virtual void Reset() => _parent = transform;
-
-        protected virtual T OnCreate()
+        protected virtual void Awake()
         {
-            var obj = Instantiate(_prefab, _parent);
-            obj.PoolReference = Pool;
+            foreach (var prefab in _prefabs)
+                Pools.Add(prefab, new(() => OnCreate(prefab), OnGet, OnRelease, OnDestroyObject));
+        }
+
+        protected virtual T OnCreate(T prefab)
+        {
+            var obj = Instantiate(prefab, _parent);
+            obj.PoolReference = Pools[prefab];
             return obj;
         }
         protected virtual void OnGet(PoolObjectBehaviour @object)
@@ -34,5 +38,15 @@ namespace Unity.Pool
             Spawned?.Remove(@object as T);
         }
         protected virtual void OnDestroyObject(PoolObjectBehaviour @object) => Destroy(@object.gameObject);
+
+        protected PoolObjectBehaviour GetPrefabRandom()
+        {
+            var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
+            return Pools[prefab].Get();
+        }
+        protected void ReleasePrefab(T item)
+        {
+            Pools[item].Release(item);
+        }
     }
 }

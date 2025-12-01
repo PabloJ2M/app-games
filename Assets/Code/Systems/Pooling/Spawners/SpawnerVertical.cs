@@ -8,7 +8,7 @@ namespace Unity.Pool
 
         protected override void OnSpawn()
         {
-            var obj = Pool.Get();
+            var obj = GetPrefabRandom();
             obj.Transform.PositionX(transform.position.x);
             obj.Transform.PositionY(transform.position.y + Random.Range(-_spawnHeight, _spawnHeight));
         }

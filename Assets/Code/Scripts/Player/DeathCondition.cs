@@ -13,9 +13,11 @@ public class DeathCondition : MonoBehaviour
 
     private BodyBehaviour _body;
     private Vector2 _origin;
+    private Color _default;
     private bool _isDeath;
 
     private void Awake() { _origin = transform.position; _body = GetComponent<BodyBehaviour>(); }
+    private void Start() => _default = _render.color;
     private void OnBecameInvisible() => Disable();
     private void OnTriggerEnter2D(Collider2D collision) => Disable();
     private void OnCollisionEnter2D(Collision2D collision) => Disable();
@@ -44,7 +46,7 @@ public class DeathCondition : MonoBehaviour
     }
     private void NormalColor()
     {
-        _render.color = Color.white;
+        _render.color = _default;
         Time.timeScale = 1f;
     }
 }

@@ -4,7 +4,7 @@ namespace Unity.Pool
     {
         protected override void OnSpawn()
         {
-            var obj = Pool.Get() as PoolObjectOnSpline;
+            var obj = GetPrefabRandom() as PoolObjectOnSpline;
             obj.SetTime(0);
         }
     }

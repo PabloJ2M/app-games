@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
+using Random = UnityEngine.Random;
 
 namespace Unity.Pool
 {
@@ -27,9 +28,9 @@ namespace Unity.Pool
             _spline = GetComponentInChildren<SplineContainer>();
         }
 
-        protected override PoolObjectOnSpline OnCreate()
+        protected override PoolObjectOnSpline OnCreate(PoolObjectOnSpline prefab)
         {
-            var clone = base.OnCreate();
+            var clone = base.OnCreate(prefab);
             clone.Spline = _spline;
             return clone;
         }

@@ -1074,7 +1074,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parent: {fileID: 2111114977}
-  _prefab: {fileID: 2726567476205998455, guid: 702ed45959908ea4fb65f51523678a1f, type: 3}
+  _prefabs:
+  - {fileID: 2726567476205998455, guid: 702ed45959908ea4fb65f51523678a1f, type: 3}
   _capacity: 10
   _enqueueDelay: 1
   _onEnqueue:
@@ -1117,7 +1118,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unity.Pool.BrickParticleEffect
   _parent: {fileID: 1014630288}
-  _prefab: {fileID: -2699839794744316778, guid: d332d54f874031c4aa10b1a2ca535f22, type: 3}
+  _prefabs:
+  - {fileID: -2699839794744316778, guid: d332d54f874031c4aa10b1a2ca535f22, type: 3}
   _force: 5
 --- !u!1 &1415896562
 GameObject:

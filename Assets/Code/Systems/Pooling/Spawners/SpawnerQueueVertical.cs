@@ -8,7 +8,7 @@ namespace Unity.Pool
         {
             yield return _emptySpaceAvailable;
 
-            var obstacle = Pool.Get();
+            var obstacle = GetPrefabRandom();
             float target = LastIndex <= 0 ? transform.PositionY() : (Spawned[LastIndex - 1].Transform.PositionY() + 1);
 
             obstacle.Transform.PositionY(target);
