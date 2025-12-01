@@ -607,6 +607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 10
+  _onJump:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &407273630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,6 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837c616d0fc7a0243a7e56a052647e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useGlobalSpeed: 1
 --- !u!114 &857155090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,7 +1471,7 @@ MonoBehaviour:
   _scoreUI: {fileID: 1035122784}
   _highScoreUI: {fileID: 1035122786}
   _newScoreAnimation: {fileID: 1035122785}
-  _distancePerPoint: 5
+  _distancePerPoint: 3
 --- !u!114 &1035122784 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2659912470350648650, guid: 896110916e2b18f419081127a2175a5d, type: 3}

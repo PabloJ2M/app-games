@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace Unity.Pool
@@ -11,14 +10,6 @@ namespace Unity.Pool
         {
             base.UpdatePosition();
             Transform.localScale = _curve.Evaluate(_currentTime) * Vector2.one;
-
-            if (_currentTime < 1f) return;
-            StartCoroutine(Release());
-        }
-        IEnumerator Release()
-        {
-            yield return new WaitForEndOfFrame();
-            PoolReference.Release(this);
         }
     }
 }

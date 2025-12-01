@@ -9,13 +9,9 @@ public class StretchAnimation : MonoBehaviour
     private void Awake() => _transform = transform;
     private void Update()
     {
-        if (_transform.localScale == Vector3.one) return;
-
-        _transform.localScale = Vector3.Lerp(_transform.localScale, Vector3.one, Time.deltaTime * _speed);
+        if (_transform.localScale != Vector3.one)
+            _transform.localScale = Vector3.Lerp(_transform.localScale, Vector3.one, Time.deltaTime * _speed);
     }
 
-    public void OnTriggerAnimation()
-    {
-        _transform.localScale = _scaleAnimation;
-    }
+    public void OnTriggerAnimation() => _transform.localScale = _scaleAnimation;
 }

@@ -12,6 +12,7 @@ namespace Unity.Pool
             public Sprite[] image;
         }
 
+        [Header("Renderer")]
         [SerializeField] private SpriteRenderer _render;
         [SerializeField] private Sprite _default;
         [SerializeField] private BlockComponent[] _blocks;
@@ -21,8 +22,7 @@ namespace Unity.Pool
         public override void Enable()
         {
             base.Enable();
-            bool isDefault = Index % 2 == 0;
-            if (isDefault) { CurrentSprite = _render.sprite = _default; return; }
+            if (Index % 2 == 0) { CurrentSprite = _render.sprite = _default; return; }
 
             int index = Random.Range(0, _blocks.Length);
             var spriteIndex = Random.Range(0, _blocks[index].image.Length);
