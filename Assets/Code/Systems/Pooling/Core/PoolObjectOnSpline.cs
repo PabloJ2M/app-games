@@ -22,9 +22,9 @@ namespace Unity.Pool
         }
         protected virtual void UpdatePosition()
         {
-            float3 position = Spline.EvaluatePosition(_currentTime);
-            if (_snap.HasFlag(Axis.X)) Transform.PositionX(position.x);
-            if (_snap.HasFlag(Axis.Y)) Transform.PositionY(position.y);
+            float3 position = Spline.EvaluatePosition(0, _currentTime);
+            if (_snap.HasFlag(Axis.X)) Transform.PositionX(math.round(position.x));
+            if (_snap.HasFlag(Axis.Y)) Transform.PositionY(math.round(position.y));
         }
 
         public void SetTime(float value)
@@ -32,6 +32,12 @@ namespace Unity.Pool
             _distanceTraveled = value * _splineLength;
             UpdatePosition();
         }
+        public void SetDistance(float value)
+        {
+            _distanceTraveled = value;
+            UpdatePosition();
+        }
+
         public void AddDistance(float amount)
         {
             _distanceTraveled += amount;

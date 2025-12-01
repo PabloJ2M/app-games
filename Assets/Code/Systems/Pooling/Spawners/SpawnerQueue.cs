@@ -26,7 +26,7 @@ namespace Unity.Pool
         }
         public void Enqueue()
         {
-            ReleasePrefab(Spawned[0]);
+            Spawned[0].Destroy();
             _onEnqueue.Invoke();
         }
     }

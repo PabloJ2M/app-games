@@ -690,40 +690,40 @@ MonoBehaviour:
     m_Knots:
     - Position:
         x: 0
-        y: 6
+        y: 0
         z: 0
       TangentIn:
         x: -0
         y: -0
-        z: -0.90000004
+        z: -1
       TangentOut:
         x: 0
         y: 0
-        z: 0.90000004
+        z: 1
       Rotation:
         value:
-          x: 0
-          y: -0.70710677
-          z: 0.70710677
-          w: -0
+          x: -0.70710677
+          y: 0
+          z: -0
+          w: 0.70710677
     - Position:
         x: 0
-        y: -3
+        y: 10
         z: 0
       TangentIn:
         x: -0
         y: -0
-        z: -0.90000004
+        z: -1
       TangentOut:
         x: 0
         y: 0
-        z: 0.90000004
+        z: 1
       Rotation:
         value:
-          x: 0
-          y: -0.70710677
-          z: 0.70710677
-          w: -0
+          x: -0.70710677
+          y: 0
+          z: -0
+          w: 0.70710677
     m_MetaData:
     - Mode: 0
       Tension: 0.5
@@ -843,7 +843,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
-  m_Color: {r: 0.24705884, g: 0.24705884, b: 0.24705884, a: 1}
+  m_Color: {r: 0.9150943, g: 0.8103899, b: 0.6863207, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -865,7 +865,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1498614885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &937653581 stripped
@@ -897,8 +898,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014630287}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21573, y: 1.07388, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -981,7 +982,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 65a8d8471701acb4eb94897509fe5ca5, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1043,6 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837c616d0fc7a0243a7e56a052647e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _useGlobalSpeed: 0
 --- !u!4 &1367880119
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,7 +1054,7 @@ Transform:
   m_GameObject: {fileID: 1367880116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1083,7 +1085,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1367880117}
         m_TargetAssemblyTypeName: Unity.Pool.PoolObjectDisplacement, Assembly-CSharp
-        m_MethodName: TranslateUnit
+        m_MethodName: TranslateUnitBackwards
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1225,7 +1227,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
-  m_Color: {r: 0.12024339, g: 0.5471698, b: 0, a: 1}
+  m_Color: {r: 0.26817036, g: 0.6226415, b: 0.13803844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -1243,12 +1245,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498614882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 798901086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1555809338
 GameObject:
@@ -1413,7 +1415,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.37527385, b: 0.3176471, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2224,5 +2226,4 @@ SceneRoots:
   - {fileID: 1415896563}
   - {fileID: 798901086}
   - {fileID: 1367880119}
-  - {fileID: 1498614885}
   - {fileID: 1555809346}

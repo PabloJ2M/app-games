@@ -81,15 +81,15 @@ SpriteRenderer:
   m_SortingLayerID: -23425163
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 0.5176471, g: 0.21960784, b: 0.047058824, a: 0.7490196}
+  m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
+  m_Color: {r: 0.74509805, g: 0.3529412, b: 0.12156863, a: 0.7490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!210 &3879421757028869125
@@ -237,15 +237,15 @@ SpriteRenderer:
   m_SortingLayerID: -23425163
   m_SortingLayer: 1
   m_SortingOrder: 5
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.101960786}
+  m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.2}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8905784905355741361
@@ -275,5 +275,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shadow2D
   _parent: {fileID: -6414594620723003860}
   _shadow: {fileID: 3095307699245638721}
-  _color: {r: 0, g: 0, b: 0, a: 0.101960786}
+  _color: {r: 0, g: 0, b: 0, a: 0.2}
   _position: {x: 3, y: -3}

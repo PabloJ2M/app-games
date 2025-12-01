@@ -5,6 +5,7 @@ namespace Unity.Pool
     [RequireComponent(typeof(IPoolManagerObjects))]
     public sealed class PoolObjectDisplacement : MonoBehaviour
     {
+        [SerializeField] private bool _useGlobalSpeed = true;
         private GameManager _gameManager;
         private IPoolManagerObjects _manager;
 
@@ -14,10 +15,15 @@ namespace Unity.Pool
             _manager = GetComponent<IPoolManagerObjects>();
         }
 
-        private void Update() => Translate(_gameManager.Speed);
+        private void Update()
+        {
+            if (!_useGlobalSpeed) return;
+            Translate(_gameManager.Speed);
+        }
 
         public void Translate(float speed) => Move(speed, Time.deltaTime);
         public void TranslateUnit() => Move(1f);
+        public void TranslateUnitBackwards() => Move(-1f);
 
         public void Move(float speed, float delta = 1f)
         {

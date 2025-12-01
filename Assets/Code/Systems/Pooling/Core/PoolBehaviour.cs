@@ -44,9 +44,5 @@ namespace Unity.Pool
             var prefab = _prefabs[Random.Range(0, _prefabs.Length)];
             return Pools[prefab].Get();
         }
-        protected void ReleasePrefab(T item)
-        {
-            Pools[item].Release(item);
-        }
     }
 }

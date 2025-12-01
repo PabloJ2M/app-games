@@ -7,6 +7,7 @@ namespace UnityEngine.Animations
     public class TweenGroup : MonoBehaviour
     {
         [SerializeField] private float _delay;
+        [SerializeField] private bool _isEnabled;
 
         [SerializeField] private bool _negateCallback;
         [SerializeField] private UnityEvent<bool> _onValueChanged;
@@ -24,6 +25,9 @@ namespace UnityEngine.Animations
 
         private IEnumerator TweenDelay(bool value)
         {
+            if (_isEnabled == value) yield break;
+
+            _isEnabled = value;
             foreach (var tween in tweens) { tween.Play(value); if (_delay != 0) yield return _delayTime; }
             if (_onValueChanged.GetPersistentEventCount() != 0) _onValueChanged.Invoke(_negateCallback ? !value : value);
         }

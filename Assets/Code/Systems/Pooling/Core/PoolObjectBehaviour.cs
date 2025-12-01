@@ -11,6 +11,7 @@ namespace Unity.Pool
         public ulong Index { protected get; set; }
 
         protected virtual void Reset() => Transform = transform;
+
         public virtual void Destroy() => PoolReference.Release(this);
         public virtual void Enable() => gameObject.SetActive(true);
         public virtual void Disable() => gameObject.SetActive(false);

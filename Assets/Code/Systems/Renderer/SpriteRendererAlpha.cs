@@ -14,7 +14,7 @@ public class SpriteRendererAlpha : MonoBehaviour
     public void SetAlpha(float value)
     {
         Color color = _render.color;
-        color.a = math.lerp(value, _defaultAlpha, 0f);
+        color.a = math.lerp(0f, _defaultAlpha, value);
         _render.color = color;
     }
 }

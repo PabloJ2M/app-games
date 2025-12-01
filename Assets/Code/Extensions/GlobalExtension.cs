@@ -12,6 +12,8 @@ public static class Math
 public static class GlobalExtension
 {
     public static float PositionX(this Transform transform) => transform.position.x;
+    public static float LocalPositionX(this Transform transform) => transform.localPosition.x;
+
     public static void PositionX(this Transform transform, float value)
     {
         Vector2 pos = transform.position;
@@ -32,6 +34,8 @@ public static class GlobalExtension
     }
 
     public static float PositionY(this Transform transform) => transform.position.y;
+    public static float LocalPositionY(this Transform transform) => transform.localPosition.y;
+
     public static void PositionY(this Transform transform, float value)
     {
         Vector2 pos = transform.position;

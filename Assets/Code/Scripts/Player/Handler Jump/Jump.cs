@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Jump : BodyBehaviour
 {
     [SerializeField] protected float _force;
+    [SerializeField] private UnityEvent _onJump;
 
     protected override void Awake()
     {
@@ -15,5 +17,6 @@ public class Jump : BodyBehaviour
         base.InteractTrigger();
         
         _rigidbody.linearVelocityY = _force;
+        if (_onJump.GetPersistentEventCount() != 0) _onJump.Invoke();
     }
 }

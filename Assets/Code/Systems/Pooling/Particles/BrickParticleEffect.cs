@@ -10,7 +10,7 @@ namespace Unity.Pool
         protected override void Awake()
         {
             base.Awake();
-            _player = GameObject.FindWithTag("Player").transform;
+            _player = GameObject.FindWithTag("Player")?.transform;
         }
         protected override void OnReleaseObjectEffect(PoolObjectBehaviour @object)
         {
