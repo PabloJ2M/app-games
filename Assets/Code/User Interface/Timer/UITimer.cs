@@ -27,6 +27,7 @@ namespace UnityEngine.UI
         }
 
         public void AddTime(float percent) => _image.fillAmount += percent;
+        public void RemoveTime(float percent) => _image.fillAmount -= percent;
         public void ResetTime() => _image.fillAmount = 1f;
     }
 }

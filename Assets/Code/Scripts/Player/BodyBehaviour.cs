@@ -8,8 +8,6 @@ public abstract class BodyBehaviour : MonoBehaviour
     protected Rigidbody2D _rigidbody;
     protected Transform _transform;
 
-    protected bool _isPlaying;
-
     protected virtual void Awake()
     {
         _transform = transform;
@@ -19,11 +17,10 @@ public abstract class BodyBehaviour : MonoBehaviour
     }
     protected virtual void HandleFirstInteraction()
     {
-        if (_isPlaying) return;
+        if (_manager.IsEnabled) return;
         _manager?.Enable();
 
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
-        _isPlaying = true;
     }
 
     public virtual void InteractTrigger()

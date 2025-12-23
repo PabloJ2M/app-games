@@ -8,8 +8,8 @@ public class GameManager : SingletonBasic<GameManager>
     [SerializeField] private float _time;
     [SerializeField] private bool _startDisabled;
 
-    public UnityEvent<float> _onSpeedUpdated;
-    public UnityEvent _onCompleteGame;
+    public UnityEvent<float> onSpeedUpdated;
+    public UnityEvent onCompleteGame;
 
     private float _speed, _currentSpeed;
 
@@ -24,7 +24,7 @@ public class GameManager : SingletonBasic<GameManager>
     }
     private void Update()
     {
-        _onSpeedUpdated.Invoke(Speed);
+        onSpeedUpdated.Invoke(Speed);
         if (!IsEnabled || _currentSpeed >= 1f) return;
 
         _currentSpeed = Mathf.Clamp01(_currentSpeed + Time.deltaTime * _speed);
@@ -36,6 +36,6 @@ public class GameManager : SingletonBasic<GameManager>
     {
         Speed = 0f;
         IsEnabled = false;
-        _onCompleteGame.Invoke();
+        onCompleteGame.Invoke();
     }
 }

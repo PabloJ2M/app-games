@@ -102,26 +102,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Transform>k__BackingField: {fileID: 6854157241640153666}
   _snap: 3
+  _roundPosition: 0
   _curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 2.93037
+      outSlope: 2.93037
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.08720931
     - serializedVersion: 3
-      time: 0.65
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 1.5
+      value: 3.5
+      inSlope: 3.0314207
+      outSlope: 3.0314207
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.08430227
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

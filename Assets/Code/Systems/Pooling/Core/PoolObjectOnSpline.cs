@@ -14,8 +14,7 @@ namespace Unity.Pool
 
         public SplineContainer Spline { protected get; set; }
 
-        protected float _currentTime;
-        private float _splineLength;
+        protected float _currentTime, _splineLength;
 
         public override void Enable()
         {
@@ -25,7 +24,7 @@ namespace Unity.Pool
         }
         protected virtual void UpdatePosition()
         {
-            float3 position = Spline.EvaluatePosition(0, _currentTime);
+            float3 position = Spline.EvaluatePosition(_currentTime);
             if (_snap.HasFlag(Axis.X)) Transform.PositionX(_roundPosition ? math.round(position.x) : position.x);
             if (_snap.HasFlag(Axis.Y)) Transform.PositionY(_roundPosition ? math.round(position.y) : position.y);
 
@@ -49,12 +48,12 @@ namespace Unity.Pool
             UpdatePosition();
         }
 
-        public void AddTime(float amount)
+        public virtual void AddTime(float amount)
         {
             _currentTime += amount;
             UpdatePosition();
         }
-        public void AddDistance(float amount)
+        public virtual void AddDistance(float amount)
         {
             _currentTime += amount / _splineLength;
             UpdatePosition();

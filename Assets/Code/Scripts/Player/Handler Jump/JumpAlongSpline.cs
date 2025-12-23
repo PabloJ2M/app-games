@@ -15,9 +15,8 @@ public class JumpAlongSpline : Jump
     }
     protected override void HandleFirstInteraction()
     {
-        if (_isPlaying) return;
+        if (_manager.IsEnabled) return;
         _manager?.Enable();
-        _isPlaying = true;
     }
 
     public override void InteractTrigger()

@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Unity.Pool
@@ -10,6 +11,13 @@ namespace Unity.Pool
         {
             base.UpdatePosition();
             Transform.localScale = _curve.Evaluate(_currentTime) * Vector2.one;
+        }
+
+        public override void AddTime(float amount)
+        {
+            float accelerate = math.max(0.01f, Transform.localScale.magnitude);
+            _currentTime += accelerate * amount;
+            UpdatePosition();
         }
     }
 }

@@ -15,5 +15,6 @@ EditorBuildSettings:
     path: Assets/Levels/Scenes/TimberMan/Game-TimberMan.unity
     guid: 8f0f67638aecbea4caac49064683b078
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: b249abc96f0af5549ba43b6297d21bb7, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
