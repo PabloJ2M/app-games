@@ -6,7 +6,7 @@ using Unity.Mathematics;
 
 namespace Unity.Pool
 {
-    public abstract class PoolObjectOnSpline : PoolObjectBehaviour
+    public class PoolObjectOnSpline : PoolObjectBehaviour
     {
         [Header("Position Handler")]
         [SerializeField] private Axis _snap;

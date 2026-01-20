@@ -15,7 +15,7 @@ namespace Unity.Events
             foreach (var element in _elements)
                 element?.Init(this);
 
-            yield return new WaitUntil(() => GameManager.Instance.IsEnabled);
+            yield return new WaitUntil(() => GameplayManager.Instance.IsEnabled);
 
             foreach (var element in _elements)
                 element?.OnStart();

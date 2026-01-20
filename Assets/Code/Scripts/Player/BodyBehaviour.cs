@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator), typeof(Rigidbody2D))]
 public abstract class BodyBehaviour : MonoBehaviour
 {
-    protected GameManager _manager;
+    protected GameplayManager _manager;
     protected Animator _animator;
     protected Rigidbody2D _rigidbody;
     protected Transform _transform;
@@ -11,7 +11,7 @@ public abstract class BodyBehaviour : MonoBehaviour
     protected virtual void Awake()
     {
         _transform = transform;
-        _manager = GameManager.Instance;
+        _manager = GameplayManager.Instance;
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }

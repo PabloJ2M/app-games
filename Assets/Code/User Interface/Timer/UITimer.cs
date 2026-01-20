@@ -10,10 +10,10 @@ namespace UnityEngine.UI
 
         public float SpeedMultiply { private get; set; } = 1f;
 
-        private GameManager _manager;
+        private GameplayManager _manager;
         private bool _isCompleted;
 
-        private void Awake() => _manager = GameManager.Instance;
+        private void Awake() => _manager = GameplayManager.Instance;
         private void Update()
         {
             if (!_manager.IsEnabled) return;

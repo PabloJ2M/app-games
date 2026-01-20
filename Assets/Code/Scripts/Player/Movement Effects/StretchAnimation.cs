@@ -14,4 +14,5 @@ public class StretchAnimation : MonoBehaviour
     }
 
     public void OnTriggerAnimation() => _transform.localScale = _scaleAnimation;
+    public void OnTriggerAnimation(Vector3 scale) => _transform.localScale = scale;
 }

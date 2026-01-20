@@ -10,12 +10,12 @@ namespace Unity.Pool
 
         private enum DisplacementType { Time, Distance };
 
-        private GameManager _gameManager;
+        private GameplayManager _gameManager;
         private IPoolManagerObjects _manager;
 
         private void Awake()
         {
-            _gameManager = GameManager.Instance;
+            _gameManager = GameplayManager.Instance;
             _manager = GetComponent<IPoolManagerObjects>();
         }
 

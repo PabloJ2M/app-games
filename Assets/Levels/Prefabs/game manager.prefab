@@ -41,34 +41,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 6518566535867923678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce180d3b786fda4caa0fbd9faec8734, type: 3}
+  m_Script: {fileID: 11500000, guid: 599b21187d051e1448a93966cd673c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
   _acceleration:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _clampSpeed: {x: 4, y: 5}
+  _clampSpeed:
+    x: 1
+    y: 1
   _time: 10
-  _startDisabled: 1
+  _startDisabled: 0
+  onSpeedUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  onCompleteGame:
+    m_PersistentCalls:
+      m_Calls: []

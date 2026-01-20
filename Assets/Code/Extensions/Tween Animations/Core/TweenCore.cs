@@ -4,46 +4,50 @@ using PrimeTween;
 
 namespace UnityEngine.Animations
 {
-    public interface ITween
-    {
-        public void Play(bool value);
-    }
-
     [DefaultExecutionOrder(100)]
-    public class TweenCore : MonoBehaviour, ITween
+    public class TweenCore : MonoBehaviour, ITween, ITweenCallback
     {
         [SerializeField] private TweenGroup _group;
         [SerializeField] private TweenSettings _settings;
         [SerializeField] private bool _startDisable, _playOnAwake;
 
-        public bool IsEnabled { get; set; }
         public TweenSettings Settings => _settings;
+        public bool IsEnabled { get; set; }
 
         public event Action<bool> onPlayStatusChanged;
-        public event Action onCancel;
-        public Action onComplete;
+        public event Action onEnabled, onDisabled;
+        public event Action onCompleted;
 
         private async void OnEnable()
         {
             IsEnabled = !_startDisable;
             _group?.AddListener(this);
+            onEnabled?.Invoke();
 
             await Task.Yield();
             if (_playOnAwake) Play(!IsEnabled);
         }
         private void OnDisable()
         {
-            onCancel?.Invoke();
             _group?.RemoveListener(this);
+            onDisabled?.Invoke();
         }
 
         public void Play(bool value)
         {
-            if (value == IsEnabled) return;
+            if (IsEnabled == value) return;
             onPlayStatusChanged?.Invoke(value);
             IsEnabled = value;
         }
+        public void ForcePlay(bool value)
+        {
+            IsEnabled = !value;
+            Play(value);
+        }
 
-        [ContextMenu("Swap Animation")] public void SwapTweenAnimation() => Play(!IsEnabled);
+        public void OnComplete()
+        {
+            onCompleted?.Invoke();
+        }
     }
 }

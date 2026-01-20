@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Unity.Pool
 {
-    public class RandomSide : ScreenOff
+    public class RandomSide : PoolObjectOnSpline
     {
         [SerializeField] private GameObject _left, _right;
 

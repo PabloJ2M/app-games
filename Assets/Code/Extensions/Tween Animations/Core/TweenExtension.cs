@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 
 namespace UnityEngine.Animations
 {
@@ -6,9 +7,9 @@ namespace UnityEngine.Animations
 
     public static class TweenExtension
     {
-        public static Vector3 Get(this Axis axis)
+        public static float3 Get(this Axis axis)
         {
-            var result = Vector3.zero;
+            var result = float3.zero;
 
             if (axis.HasFlag(Axis.X)) result.x = 1;
             if (axis.HasFlag(Axis.Y)) result.y = 1;
@@ -16,9 +17,20 @@ namespace UnityEngine.Animations
 
             return result;
         }
-        public static Vector2 Get(this Direction direction)
+        public static float3 GetInverse(this Axis axis)
         {
-            var result = Vector2.zero;
+            var result = new float3(1f, 1f, 1f);
+
+            if (axis.HasFlag(Axis.X)) result.x = 0;
+            if (axis.HasFlag(Axis.Y)) result.y = 0;
+            if (axis.HasFlag(Axis.Z)) result.z = 0;
+
+            return result;
+        }
+
+        public static float3 Get(this Direction direction)
+        {
+            var result = float3.zero;
             
             if (direction.HasFlag(Direction.Up)) result.y = 1;
             if (direction.HasFlag(Direction.Down)) result.y = -1;
@@ -28,10 +40,10 @@ namespace UnityEngine.Animations
             return result;
         }
 
-        public static float InverseLerp(Vector3 a, Vector3 b, Vector3 t)
+        public static float InverseLerp(float3 a, float3 b, float3 t)
         {
             var ab = b - a; var at = t - a;
-            return Mathf.Clamp01(Vector3.Dot(at, ab) / Vector3.Dot(ab, ab));
+            return math.clamp(math.dot(at, ab) / math.dot(ab, ab), 0, 1);
         }
     }
 }

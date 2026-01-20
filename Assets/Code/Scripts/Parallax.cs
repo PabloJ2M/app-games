@@ -20,8 +20,8 @@ namespace Environment
             _tileSize = _direction * 0.1f * ((float2)render.size / units);
             _material = render.material;
         }
-        private void OnEnable() => GameManager.Instance.onSpeedUpdated.AddListener(AddSpeedConstant);
-        private void OnDisable() => GameManager.Instance.onSpeedUpdated.RemoveListener(AddSpeedConstant);
+        private void OnEnable() => GameplayManager.Instance.onSpeedUpdated.AddListener(AddSpeedConstant);
+        private void OnDisable() => GameplayManager.Instance.onSpeedUpdated.RemoveListener(AddSpeedConstant);
 
         private void AddSpeedConstant(float amount) => AddSpeed(amount * Time.deltaTime);
         public void AddSpeed(float amount)

@@ -14,7 +14,7 @@ namespace Unity.Pool
         }
         protected override void OnReleaseObjectEffect(PoolObjectBehaviour @object)
         {
-            var brick = @object as Brick;
+            var brick = @object as Stack;
             var particle = GetPrefabRandom() as BrickParticle;
 
             particle.SetImage(brick.CurrentSprite);

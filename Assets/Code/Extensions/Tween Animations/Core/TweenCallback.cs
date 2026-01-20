@@ -2,14 +2,20 @@ using UnityEngine.Events;
 
 namespace UnityEngine.Animations
 {
+    [RequireComponent(typeof(ITweenCallback))]
     public class TweenCallback : MonoBehaviour
     {
         [SerializeField] private UnityEvent _onCompleteAnimation;
+        private ITweenCallback _tween;
 
-        private TweenCore _core;
-
-        private void Awake() => _core = GetComponent<TweenCore>();
-        private void Start() => _core.onComplete += _onCompleteAnimation.Invoke;
-        private void OnDestroy() => _core.onComplete -= _onCompleteAnimation.Invoke;
+        private void Awake()
+        {
+            _tween = GetComponent<ITweenCallback>();
+            _tween.onCompleted += _onCompleteAnimation.Invoke;
+        }
+        private void OnDestroy()
+        {
+            _tween.onCompleted -= _onCompleteAnimation.Invoke;
+        }
     }
 }

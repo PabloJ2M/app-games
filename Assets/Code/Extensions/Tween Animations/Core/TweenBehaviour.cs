@@ -1,37 +1,40 @@
 using PrimeTween;
-using System.Threading.Tasks;
 
 namespace UnityEngine.Animations
 {
     [RequireComponent(typeof(TweenCore))]
-    public abstract class TweenBehaviour<T> : MonoBehaviour
+    public abstract class TweenBehaviour<T> : MonoBehaviour where T : struct
     {
-        protected TweenCore _tweenCore;
+        protected ITween _tweenCore;
+        protected ITweenCallback _tweenCallback;
 
         protected Tween _tween;
-        protected TweenSettings _settings;
+        protected TweenSettings _settings => _tweenCore.Settings;
+        protected TweenSettings<T> _tweenSettings;
 
-        protected virtual void Awake() => _tweenCore = GetComponent<TweenCore>();
-        protected virtual async void OnEnable()
+        protected virtual void Awake()
         {
-            _tweenCore.onPlayStatusChanged += OnPerformePlay;
-            _tweenCore.onCancel += CancelTween;
-            _settings = _tweenCore.Settings;
+            _tweenCore = GetComponent<ITween>();
+            _tweenCallback = GetComponent<ITweenCallback>();
 
-            await Task.Yield();
-            OnStart();
+            _tweenCallback.onPlayStatusChanged += OnPlay;
+            _tweenCallback.onDisabled += OnCancel;
+            _tweenCallback.onEnabled += OnStart;
         }
-        protected virtual void OnDisable()
+        protected virtual void OnDestroy()
         {
-            _tweenCore.onPlayStatusChanged -= OnPerformePlay;
-            _tweenCore.onCancel -= CancelTween;
-            CancelTween();
+            _tweenCallback.onPlayStatusChanged -= OnPlay;
+            _tweenCallback.onDisabled -= OnCancel;
+            _tweenCallback.onEnabled -= OnStart;
         }
 
-        protected abstract void OnStart();
-        protected abstract void OnPerformePlay(bool value);
-        protected abstract void OnUpdate(T value);
-        protected abstract void OnComplete();
-        protected void CancelTween() => _tween.Stop();
+        protected virtual void OnPlay(bool value)
+        {
+            if (_tween.isAlive)
+                OnCancel();
+        }
+        protected virtual void OnStart() { }
+        protected virtual void OnCancel() => _tween.Stop();
+        protected virtual void OnComplete() => _tweenCallback?.OnComplete();
     }
 }
