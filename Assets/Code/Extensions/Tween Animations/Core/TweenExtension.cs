@@ -11,9 +11,9 @@ namespace UnityEngine.Animations
         {
             var result = float3.zero;
 
-            if (axis.HasFlag(Axis.X)) result.x = 1;
-            if (axis.HasFlag(Axis.Y)) result.y = 1;
-            if (axis.HasFlag(Axis.Z)) result.z = 1;
+            if ((axis & Axis.X) != 0) result.x = 1;
+            if ((axis & Axis.Y) != 0) result.y = 1;
+            if ((axis & Axis.Z) != 0) result.z = 1;
 
             return result;
         }
@@ -21,9 +21,9 @@ namespace UnityEngine.Animations
         {
             var result = new float3(1f, 1f, 1f);
 
-            if (axis.HasFlag(Axis.X)) result.x = 0;
-            if (axis.HasFlag(Axis.Y)) result.y = 0;
-            if (axis.HasFlag(Axis.Z)) result.z = 0;
+            if ((axis & Axis.X) != 0) result.x = 0;
+            if ((axis & Axis.Y) != 0) result.y = 0;
+            if ((axis & Axis.Z) != 0) result.z = 0;
 
             return result;
         }
@@ -32,10 +32,10 @@ namespace UnityEngine.Animations
         {
             var result = float3.zero;
             
-            if (direction.HasFlag(Direction.Up)) result.y = 1;
-            if (direction.HasFlag(Direction.Down)) result.y = -1;
-            if (direction.HasFlag(Direction.Left)) result.x = -1;
-            if (direction.HasFlag(Direction.Right)) result.x = 1;
+            if ((direction & Direction.Up) != 0) result.y = 1;
+            if ((direction & Direction.Down) != 0) result.y = -1;
+            if ((direction & Direction.Left) != 0) result.x = -1;
+            if ((direction & Direction.Right) != 0) result.x = 1;
 
             return result;
         }
