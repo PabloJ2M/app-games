@@ -8,6 +8,8 @@ public abstract class BodyBehaviour : MonoBehaviour
     protected Rigidbody2D _rigidbody;
     protected Transform _transform;
 
+    private bool _hasStarted;
+
     protected virtual void Awake()
     {
         _transform = transform;
@@ -17,9 +19,10 @@ public abstract class BodyBehaviour : MonoBehaviour
     }
     protected virtual void HandleFirstInteraction()
     {
-        if (_manager.IsEnabled) return;
-        _manager?.Enable();
+        if (_hasStarted) return;
 
+        _manager?.Enable();
+        _hasStarted = true;
         _rigidbody.bodyType = RigidbodyType2D.Dynamic;
     }
 

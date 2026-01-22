@@ -16,8 +16,16 @@ public class UIScore : MonoBehaviour
         if (Application.isEditor)
             PlayerPrefs.DeleteKey(_highScore);
     }
-    public void Add(int value) { _score += value; _scoreUI.SetText(_score.ToString()); }
-    public void Remove(int value) { _score -= value; _scoreUI.SetText(_score.ToString()); }
+    public void Add(int value)
+    {
+        _score += value;
+        _scoreUI.SetText(_score.ToString());
+    }
+    public void Remove(int value)
+    {
+        _score -= value;
+        _scoreUI.SetText(_score.ToString());
+    }
 
     public void SaveNewScore()
     {

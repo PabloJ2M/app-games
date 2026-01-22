@@ -11,12 +11,12 @@ namespace Unity.Pool
         private enum DisplacementType { Time, Distance };
 
         private GameplayManager _gameManager;
-        private IPoolManagerObjects _manager;
+        private IPoolManagerObjects _pool;
 
         private void Awake()
         {
             _gameManager = GameplayManager.Instance;
-            _manager = GetComponent<IPoolManagerObjects>();
+            _pool = GetComponent<IPoolManagerObjects>();
         }
 
         private void Update()
@@ -37,16 +37,18 @@ namespace Unity.Pool
         public void MoveDistance(float speed, float delta = 1f)
         {
             if (speed == 0) return;
+            float d = speed * delta * _pool.SpeedMultiply;
 
-            foreach (var item in _manager.Spawned)
-                item.AddDistance(speed * delta);
+            foreach (var item in _pool.Spawned)
+                item.AddDistance(d);
         }
         public void MoveTime(float speed)
         {
             if (speed == 0) return;
+            float t = speed * Time.deltaTime * _pool.SpeedMultiply;
 
-            foreach (var item in _manager.Spawned)
-                item.AddTime(speed * Time.deltaTime);
+            foreach (var item in _pool.Spawned)
+                item.AddTime(t);
         }
     }
 }

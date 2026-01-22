@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6769000552271770150}
   - component: {fileID: 6216567425681759440}
-  - component: {fileID: 2726567476205998455}
+  - component: {fileID: 7216241332970827810}
   m_Layer: 0
   m_Name: Obstacle-TimberMan
   m_TagString: Untagged
@@ -37,6 +37,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6216567425681759440
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55,6 +56,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -76,9 +79,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
   m_Color: {r: 0.745283, g: 0.351197, b: 0.12304199, a: 1}
   m_FlipX: 0
@@ -88,9 +93,8 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2726567476205998455
+--- !u!114 &7216241332970827810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,21 +103,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4576343282882170397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46288e5202a4979458c5e76f6ab9d195, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e5639cbaa79e6243a8e0e517e00893c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::Unity.Pool.Stack
   <Transform>k__BackingField: {fileID: 6769000552271770150}
-  _snap: 3
+  _snap: 2
   _roundPosition: 1
   _render: {fileID: 6216567425681759440}
-  _default: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
   _blocks:
   - collider: {fileID: 6443828996924144326}
-    image:
-    - {fileID: -1015822913, guid: e8b2d521b7537f94b8f75fbb4b7d1cf3, type: 3}
+    image: {fileID: -1015822913, guid: e8b2d521b7537f94b8f75fbb4b7d1cf3, type: 3}
   - collider: {fileID: 5617198324136264168}
-    image:
-    - {fileID: -6464921989863458511, guid: e8b2d521b7537f94b8f75fbb4b7d1cf3, type: 3}
+    image: {fileID: -6464921989863458511, guid: e8b2d521b7537f94b8f75fbb4b7d1cf3, type: 3}
 --- !u!1 &5389749081246694558
 GameObject:
   m_ObjectHideFlags: 0

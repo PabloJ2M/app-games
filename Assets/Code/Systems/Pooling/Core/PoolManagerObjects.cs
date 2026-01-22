@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
-using Random = UnityEngine.Random;
 
 namespace Unity.Pool
 {
     public interface IPoolManagerObjects
     {
+        public float SpeedMultiply { get; }
         public IList<PoolObjectOnSpline> Spawned { get; }
 
         public event Action<PoolObjectBehaviour> OnSpawnObject;
@@ -19,6 +19,7 @@ namespace Unity.Pool
         [SerializeField] protected int _capacity = 10;
         protected SplineContainer _spline;
 
+        public virtual float SpeedMultiply { get; } = 1f;
         public event Action<PoolObjectBehaviour> OnSpawnObject;
         public event Action<PoolObjectBehaviour> OnDespawnObject;
 

@@ -378,11 +378,27 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onCompleteGame.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onSpeedUpdated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
@@ -402,6 +418,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1240636621888303011}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 726682992}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1259914550}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1259914550}
@@ -418,6 +446,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 36366961}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -432,6 +472,18 @@ PrefabInstance:
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onSpeedUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SaveNewScore
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: FadeOut
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: FadeIn
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -450,6 +502,18 @@ PrefabInstance:
       value: set_SpeedMultiply
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIScore, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Animations.TweenCanvasGroup, PrimeTween.Animations
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.Animations.TweenCanvasGroup, PrimeTween.Animations
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.Animations.TweenCanvasGroup, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -464,6 +528,18 @@ PrefabInstance:
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onSpeedUpdated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.UI.UITimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
+      propertyPath: onCompleteGame.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1099866190471384643, guid: a1c4354504783b44288da99289c4a270, type: 3}
       propertyPath: _onCompleteGame.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -797,9 +873,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Parallax
   _speedMultiply: 1
-  _direction: {x: 0, y: 1}
+  _direction:
+    x: 0
+    y: 1
 --- !u!212 &798901085
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -818,6 +897,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -839,9 +920,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 226288351
   m_SortingLayer: -1
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
   m_Color: {r: 0.9150943, g: 0.8103899, b: 0.6863207, a: 1}
   m_FlipX: 0
@@ -851,7 +934,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &798901086
 Transform:
@@ -939,6 +1021,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1169577562
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -957,6 +1040,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -978,9 +1063,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 65a8d8471701acb4eb94897509fe5ca5, type: 3}
   m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
@@ -990,7 +1077,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1259914550 stripped
 MonoBehaviour:
@@ -1023,8 +1109,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1367880119}
   - component: {fileID: 1367880120}
-  - component: {fileID: 1367880117}
   - component: {fileID: 1367880121}
+  - component: {fileID: 1367880117}
   m_Layer: 0
   m_Name: spawner
   m_TagString: Untagged
@@ -1044,6 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 837c616d0fc7a0243a7e56a052647e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _type: 1
   _useGlobalSpeed: 0
 --- !u!4 &1367880119
 Transform:
@@ -1077,7 +1164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _parent: {fileID: 2111114977}
   _prefabs:
-  - {fileID: 2726567476205998455, guid: 702ed45959908ea4fb65f51523678a1f, type: 3}
+  - {fileID: 7216241332970827810, guid: 702ed45959908ea4fb65f51523678a1f, type: 3}
   _capacity: 10
   _enqueueDelay: 1
   _onEnqueue:
@@ -1184,6 +1271,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &1498614884
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1202,6 +1290,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1223,9 +1313,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
   m_Color: {r: 0.26817036, g: 0.6226415, b: 0.13803844, a: 1}
   m_FlipX: 0
@@ -1235,7 +1327,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1498614885
 Transform:
@@ -1372,6 +1463,7 @@ Rigidbody2D:
   m_Constraints: 6
 --- !u!212 &1555809345
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1390,6 +1482,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1411,9 +1505,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 32cecc1c4be5e7d4897ece01fc74112a, type: 3}
   m_Color: {r: 1, g: 0.37527385, b: 0.3176471, a: 1}
   m_FlipX: 0
@@ -1423,7 +1519,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1555809346
 Transform:
@@ -1823,6 +1918,10 @@ PrefabInstance:
     - target: {fileID: 1622698054236556461, guid: 896110916e2b18f419081127a2175a5d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -220
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305427747742844905, guid: 896110916e2b18f419081127a2175a5d, type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2659912470350648650, guid: 896110916e2b18f419081127a2175a5d, type: 3}
       propertyPath: m_fontStyle
