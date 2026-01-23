@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unity.Pool.Stack
   <Transform>k__BackingField: {fileID: 6769000552271770150}
-  _snap: 2
+  _followAxis: 2
   _roundPosition: 1
   _render: {fileID: 6216567425681759440}
   _blocks:

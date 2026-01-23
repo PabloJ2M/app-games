@@ -1,23 +1,12 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Splines;
 
 namespace Unity.Pool
 {
-    public interface IPoolManagerObjects
-    {
-        public float SpeedMultiply { get; }
-        public IList<PoolObjectOnSpline> Spawned { get; }
-
-        public event Action<PoolObjectBehaviour> OnSpawnObject;
-        public event Action<PoolObjectBehaviour> OnDespawnObject;
-    }
-
     public abstract class PoolManagerObjects : PoolBehaviuour<PoolObjectOnSpline>, IPoolManagerObjects
     {
         [SerializeField] protected int _capacity = 10;
-        protected SplineContainer _spline;
+        protected ISpline _spline;
 
         public virtual float SpeedMultiply { get; } = 1f;
         public event Action<PoolObjectBehaviour> OnSpawnObject;
@@ -26,7 +15,7 @@ namespace Unity.Pool
         protected override void Awake()
         {
             base.Awake();
-            _spline = GetComponentInChildren<SplineContainer>();
+            _spline = GetComponentInChildren<ISpline>();
         }
 
         protected override PoolObjectOnSpline OnCreate(PoolObjectOnSpline prefab)

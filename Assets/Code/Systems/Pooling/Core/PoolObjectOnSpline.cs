@@ -1,40 +1,34 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Splines;
 using UnityEngine.Animations;
-using Unity.Mathematics;
 
 namespace Unity.Pool
 {
+    using Mathematics;
+
     public class PoolObjectOnSpline : PoolObjectBehaviour
     {
         [Header("Position Handler")]
-        [SerializeField] private Axis _snap;
+        [SerializeField] private Axis _followAxis;
         [SerializeField] private bool _roundPosition;
 
-        public SplineContainer Spline { protected get; set; }
-
-        protected float _currentTime, _splineLength;
+        public ISpline Spline { protected get; set; }
+        protected float _currentTime;
 
         public override void Enable()
         {
             base.Enable();
             _currentTime = 0;
-            _splineLength = Spline.CalculateLength();
         }
         protected virtual void UpdatePosition()
         {
-            float3 position = Spline.EvaluatePosition(_currentTime);
-            if (_snap.HasFlag(Axis.X)) Transform.PositionX(_roundPosition ? math.round(position.x) : position.x);
-            if (_snap.HasFlag(Axis.Y)) Transform.PositionY(_roundPosition ? math.round(position.y) : position.y);
+            if (_currentTime >= 1f) {
+                Destroy();
+                return;
+            }
 
-            if (_currentTime >= 1f) StartCoroutine(Release());
-        }
-
-        private IEnumerator Release()
-        {
-            yield return null;
-            Destroy();
+            float3 position = Spline.GetPosition(_currentTime);
+            if ((_followAxis & Axis.X) != 0) Transform.PositionX(_roundPosition ? math.round(position.x) : position.x);
+            if ((_followAxis & Axis.Y) != 0) Transform.PositionY(_roundPosition ? math.round(position.y) : position.y);
         }
 
         public void SetTime(float value)
@@ -44,7 +38,7 @@ namespace Unity.Pool
         }
         public void SetDistance(float value)
         {
-            _currentTime = value / _splineLength;
+            _currentTime = value * Spline.LengthInv;
             UpdatePosition();
         }
 
@@ -55,7 +49,7 @@ namespace Unity.Pool
         }
         public virtual void AddDistance(float amount)
         {
-            _currentTime += amount / _splineLength;
+            _currentTime += amount * Spline.LengthInv;
             UpdatePosition();
         }
     }

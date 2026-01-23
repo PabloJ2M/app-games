@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Unity.Pool.PoolObjectOnSpline
   <Transform>k__BackingField: {fileID: 6854157241640153666}
-  _snap: 1
+  _followAxis: 1
   _roundPosition: 0
 --- !u!1 &7823313033539513054
 GameObject:

@@ -18,7 +18,6 @@ namespace Unity.Pool
             _gameManager = GameplayManager.Instance;
             _pool = GetComponent<IPoolManagerObjects>();
         }
-
         private void Update()
         {
             if (!_useGlobalSpeed) return;
@@ -39,16 +38,16 @@ namespace Unity.Pool
             if (speed == 0) return;
             float d = speed * delta * _pool.SpeedMultiply;
 
-            foreach (var item in _pool.Spawned)
-                item.AddDistance(d);
+            for (int i = _pool.Spawned.Count - 1; i >= 0; i--)
+                _pool.Spawned[i].AddDistance(d);
         }
         public void MoveTime(float speed)
         {
             if (speed == 0) return;
             float t = speed * Time.deltaTime * _pool.SpeedMultiply;
 
-            foreach (var item in _pool.Spawned)
-                item.AddTime(t);
+            for (int i = _pool.Spawned.Count - 1; i >= 0; i--)
+                _pool.Spawned[i].AddTime(t);
         }
     }
 }
