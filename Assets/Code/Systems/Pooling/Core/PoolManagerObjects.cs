@@ -1,11 +1,9 @@
 using System;
-using UnityEngine;
 
 namespace Unity.Pool
 {
     public abstract class PoolManagerObjects : PoolBehaviuour<PoolObjectOnSpline>, IPoolManagerObjects
     {
-        [SerializeField] protected int _capacity = 10;
         protected ISpline _spline;
 
         public virtual float SpeedMultiply { get; } = 1f;

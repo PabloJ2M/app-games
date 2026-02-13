@@ -6,6 +6,7 @@ namespace Unity.Pool
 {
     public abstract class SpawnerQueue : PoolManagerObjects
     {
+        [SerializeField] private int _capacity = 10;
         [SerializeField] private float _enqueueDelay;
         [SerializeField] private UnityEvent _onEnqueue;
 

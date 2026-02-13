@@ -52,5 +52,12 @@ namespace Unity.Pool
             _currentTime += amount * Spline.LengthInv;
             UpdatePosition();
         }
+
+        public void SnapPosition()
+        {
+            float distance = _currentTime * Spline.Length;
+            float snapped = Mathf.Round(distance / 1.5f) * 1.5f;
+            SetDistance(snapped);
+        }
     }
 }

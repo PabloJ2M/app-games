@@ -15,6 +15,16 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: a3e2cc4fd6576a541bc7d60d91ba0cca
   m_SerializeEntries:
+  - m_GUID: 51b823f0a67be34478657d33a2124b9b
+    m_Address: Assets/Levels/Scenes/Slot/Audio/Slot Machine Jackpot Sound Effect.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 684ead703d7773047b75b87023421a74
+    m_Address: Assets/Levels/Scenes/Slot/Audio/Sound Effect - Slot Machine.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7974e15d89593474ebbfecda6301e256
     m_Address: Assets/Art/Audio/Tap.mp3
     m_ReadOnly: 0

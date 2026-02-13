@@ -12,7 +12,6 @@ namespace UnityEngine.SceneManagement
         private bool _lock;
 
         private void Start() => Instantiate(_fade, _transform);
-
         public void SwipeScene(string value) => OnFading(value);
         public void Quit() => OnFading(string.Empty);
 

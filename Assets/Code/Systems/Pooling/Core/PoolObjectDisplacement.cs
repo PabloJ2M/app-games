@@ -44,10 +44,15 @@ namespace Unity.Pool
         public void MoveTime(float speed)
         {
             if (speed == 0) return;
-            float t = speed * Time.deltaTime * _pool.SpeedMultiply;
+            float t = speed * _pool.SpeedMultiply;
 
             for (int i = _pool.Spawned.Count - 1; i >= 0; i--)
                 _pool.Spawned[i].AddTime(t);
+        }
+        public void SnapPosition()
+        {
+            for (int i = _pool.Spawned.Count - 1; i >= 0; i--)
+                _pool.Spawned[i].SnapPosition();
         }
     }
 }

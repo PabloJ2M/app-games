@@ -12,16 +12,18 @@ namespace Unity.Pool
         [SerializeField, Range(2, byte.MaxValue)] private byte _resolution = 2;
 
         private float3[] _points;
-        private float _lengthInv;
+        private float _length, _lengthInv;
 
         public float LengthInv => _lengthInv;
+        public float Length => _length;
 
         private void Awake()
         {
             var spline = GetComponent<SplineContainer>();
 
             _points = new float3[_resolution];
-            _lengthInv = 1f / spline.CalculateLength();
+            _length = spline.CalculateLength();
+            _lengthInv = 1f / _length;
 
             for (int i = 0; i < _resolution; i++)
             {

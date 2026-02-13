@@ -6,6 +6,10 @@ namespace Unity.Pool
     {
         [SerializeField] private float _spawnWidth;
 
+        public override void ChangeLastItem(Sprite sprite)
+        {
+            
+        }
         protected override void OnSpawn()
         {
             var obj = GetPrefabRandom();
